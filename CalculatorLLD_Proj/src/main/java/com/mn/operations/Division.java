@@ -2,14 +2,15 @@ package com.mn.operations;
 
 import com.mn.exceptions.DivisionByZeroException;
 import com.mn.model.Calculator;
-import com.mn.service.ICalculatorService;
 
-public class Division implements ICalculatorService {
+public class Division implements IOperations {
 	 
 	@Override
-	public Double calculatorOperation(Calculator calculator)  {
+	public Calculator apply(Calculator calculator)  {
 		  if (calculator.getSecondNumber() != 0) {
-			  return calculator.getFirstNumber() / calculator.getSecondNumber();
+			  Double sol =  calculator.getFirstNumber() / calculator.getSecondNumber();
+			  calculator.setSolution(sol);
+			  return calculator;
 	        } else {
 	        	 throw new DivisionByZeroException("Division by zero is not allowed.");
 	        }

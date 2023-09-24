@@ -5,6 +5,10 @@ public class Calculator {
 	private Double FirstNumber;
 	private Double SecondNumber;
 	private String Operation;
+	private Object Solution;
+
+	public Calculator() {
+	}
 
 	public Calculator(Double firstNumber, Double secondNumber, String operation) {
 		FirstNumber = firstNumber;
@@ -36,10 +40,18 @@ public class Calculator {
 		Operation = operation;
 	}
 
+	public Object getSolution() {
+		return Solution;
+	}
+
+	public void setSolution(Object solution) {
+		Solution = solution;
+	}
+
 	@Override
 	public String toString() {
 		return "Calculator [FirstNumber=" + FirstNumber + ", SecondNumber=" + SecondNumber + ", Operation=" + Operation
-				+ "]";
+				+ ", Solution=" + Solution + "]";
 	}
 
 }
